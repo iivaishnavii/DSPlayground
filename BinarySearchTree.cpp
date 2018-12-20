@@ -26,6 +26,18 @@ void inorderTraversal(node *root)
     else
         return;
 }
+//count the number of nodes in a range
+void inorderTraversalBST(node *root,int low,int high)
+{
+    if(root==NULL)
+        return;
+    if(root->val > low)
+        inorderTraversalBST(root->left,low,high);
+    if(root->val >=low && root->val <=high)
+        count++;
+    if(root->val < high)
+    inorderTraversalBST(root->right,low,high);
+}
 void preorderTraversal(node * root)
 {
     if(root!=NULL)
